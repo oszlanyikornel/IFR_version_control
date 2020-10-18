@@ -17,9 +17,12 @@ namespace week6
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
+            fillCurrencies();
+            comboBox1.DataSource = Currencies;
             RefreshData();
         }
 
@@ -45,6 +48,8 @@ namespace week6
 
                 rate.Date = DateTime.Parse(element.GetAttribute("date"));
                 var childElement = (XmlElement)element.ChildNodes[0];
+                if (childElement == null)
+                    continue;
                 rate.Currency = childElement.GetAttribute("curr");
                 var unit = decimal.Parse(childElement.GetAttribute("unit"));
                 var value = decimal.Parse(childElement.InnerText);
@@ -81,6 +86,35 @@ namespace week6
             mnbCall();
             rateDgw.DataSource = Rates;
             showDiagram();
+        }
+
+        private void fillCurrencies()
+        {
+            var mnbService = new MNBArfolyamServiceSoapClient();
+            var request = new GetCurrenciesRequestBody();
+            var response = mnbService.GetCurrencies(request);
+            var result = response.GetCurrenciesResult;
+
+            richTextBox1.Text = result.ToString();
+
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement element in xml.DocumentElement.ChildNodes[0])
+            {
+                //var curr = "";
+                Currencies.Add(element.InnerText);
+
+                //rate.Date = DateTime.Parse(element.GetAttribute("currency"));
+                //var childElement = (XmlElement)element.ChildNodes[0];
+                //if (childElement == null)
+                //    continue;
+                //rate.Currency = childElement.GetAttribute("curr");
+                //var unit = decimal.Parse(childElement.GetAttribute("unit"));
+                //var value = decimal.Parse(childElement.InnerText);
+                //if (unit != 0)
+                //    rate.Value = value / unit;
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
