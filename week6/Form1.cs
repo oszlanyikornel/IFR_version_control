@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using week6.MnbServiceReference;
 
 namespace week6
 {
@@ -15,6 +16,31 @@ namespace week6
         public Form1()
         {
             InitializeComponent();
+            mnbCall();
+        }
+
+        private void mnbCall()
+        {
+            try
+            {
+                var mnbService = new MNBArfolyamServiceSoapClient();
+                var request = new GetExchangeRatesRequestBody()
+                {
+                    currencyNames = "EUR",
+                    startDate = "2020-01-01",
+                    endDate = "2020-06-30"
+                };
+                var response = mnbService.GetExchangeRates(request);
+                var result = response.GetExchangeRatesResult;
+                richTextBox1.Text = result;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+            }
+            
         }
     }
+
+    
 }
