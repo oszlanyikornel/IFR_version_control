@@ -28,32 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rateDgw = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.rateDgw)).BeginInit();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rateDgw
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(86, 50);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(628, 364);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rateDgw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rateDgw.Location = new System.Drawing.Point(65, 63);
+            this.rateDgw.Name = "rateDgw";
+            this.rateDgw.RowHeadersWidth = 102;
+            this.rateDgw.RowTemplate.Height = 40;
+            this.rateDgw.Size = new System.Drawing.Size(1528, 1024);
+            this.rateDgw.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(2167, 1218);
+            this.Controls.Add(this.rateDgw);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.rateDgw)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView rateDgw;
     }
 }
 

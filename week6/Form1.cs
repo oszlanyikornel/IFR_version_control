@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using week6.Entites;
 using week6.MnbServiceReference;
 
 namespace week6
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
         public Form1()
         {
             InitializeComponent();
             mnbCall();
+            rateDgw.DataSource = Rates;
         }
 
         private void mnbCall()
@@ -32,7 +35,6 @@ namespace week6
                 };
                 var response = mnbService.GetExchangeRates(request);
                 var result = response.GetExchangeRatesResult;
-                richTextBox1.Text = result;
             }
             catch (Exception e)
             {
