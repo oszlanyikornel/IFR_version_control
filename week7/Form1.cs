@@ -148,8 +148,6 @@ namespace week7
             }
         }
 
-        
-
         private void startBtn_Click(object sender, EventArgs e)
         {
             resutRichTxtBox.Clear();
@@ -158,7 +156,7 @@ namespace week7
 
             Population = GetPopulation(fileTxtBox.Text);
             startSim((int)endYearInput.Value);
-            
+            DisplayResults((int)endYearInput.Value);
         }
 
         private void brosweBtn_Click(object sender, EventArgs e)
@@ -175,6 +173,19 @@ namespace week7
 
                 }
             }
+        }
+
+        private void DisplayResults(int endYear)
+        {
+            string content = "";
+            foreach (var pop in popData)
+            {
+                content = content +
+                          "Szimulációs év: " + pop.year + "\n\t"
+                          + "Fiúk: " + pop.malePop + "\n\t"
+                          + "Lányok: " + pop.femalePop + "\n\n";
+            }
+            resutRichTxtBox.Text = content;
         }
     }
 }
