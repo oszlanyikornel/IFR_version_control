@@ -50,6 +50,7 @@
     <Compile Include="Entities\DeathProbability.cs" />
     <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\PopulationData.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
