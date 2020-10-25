@@ -147,5 +147,34 @@ namespace week7
                 });
             }
         }
+
+        
+
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+            resutRichTxtBox.Clear();
+            Population.Clear();
+            popData.Clear();
+
+            Population = GetPopulation(fileTxtBox.Text);
+            startSim((int)endYearInput.Value);
+            
+        }
+
+        private void brosweBtn_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = openFileDialog.FileName;
+                    fileTxtBox.Text = filePath;
+
+
+                }
+            }
+        }
     }
 }
