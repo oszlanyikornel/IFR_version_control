@@ -1,4 +1,4 @@
-﻿namespace week07
+﻿namespace week7
 {
     partial class Form1
     {
@@ -28,25 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Form1
-            // 
-            this.ClientSize = new System.Drawing.Size(851, 523);
-            this.Name = "Form1";
-            this.ResumeLayout(false);
-
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form1";
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown endYearInput;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label nepessegLabel;
-        private System.Windows.Forms.TextBox fileTxtBox;
-        private System.Windows.Forms.Button brosweBtn;
-        private System.Windows.Forms.Button startBtn;
-        private System.Windows.Forms.RichTextBox resutRichTxtBox;
     }
 }
 
