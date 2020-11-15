@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace week08.entitie
 {
-    class Ball : Label
+    class Ball : Toy
     {
         public Ball()
         {
@@ -23,9 +23,9 @@ namespace week08.entitie
             DrawImage(e.Graphics);
         }
 
-        protected void DrawImage(Graphics graphics)
+        protected override void DrawImage(Graphics g)
         {
-            graphics.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
+            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
         }
 
         public void MoveBall()
