@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace week08.entitie
 {
-    abstract class Toy : Label
+    public abstract class Toy : Label
     {
         public Toy()
         {
