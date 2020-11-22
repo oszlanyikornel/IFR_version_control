@@ -30,13 +30,15 @@ namespace UnitTestExample.Controllers
                     "A megadottt jelszó nem megfelelő!\n" +
                     "A jelszó legalább 8 karakter hosszú kell legyen, csak az angol ABC betűiből és számokból állhat, és tartalmaznia kell legalább egy kisbetűt, egy nagybetűt és egy számot.");
 
+            
             var account = new Account()
             {
                 Email = email,
                 Password = password
             };
-
+            
             var newAccount = AccountManager.CreateAccount(account);
+            
 
             return newAccount;
         }
