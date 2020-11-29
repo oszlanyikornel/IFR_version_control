@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0832DD47-4244-4C60-B193-CF9853ADF463}</ProjectGuid>
+    <ProjectGuid>{5F093F97-2F86-40FD-BB7A-6A4A97F92EF5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>week10</RootNamespace>
     <AssemblyName>week10</AssemblyName>
@@ -44,10 +44,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WorldsHardestGame %281%29, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>libs\WorldsHardestGame (1).dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -79,10 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="libs\WorldsHardestGame %281%29.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
